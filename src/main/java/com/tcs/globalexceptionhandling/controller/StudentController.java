@@ -1,5 +1,7 @@
 package com.tcs.globalexceptionhandling.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,5 +35,10 @@ public class StudentController {
 	@GetMapping("/getstudentbyid/{Id}")
 	public Student getStudentById(@PathVariable("Id") String studentId) {
 		return service.getStudentById(studentId);
+	}
+	
+	@GetMapping("/getallstudents")
+	public ResponseEntity<List<Student>> getAllStudents(){
+		return new ResponseEntity<List<Student>>(service.getAllStudents(),HttpStatus.OK);
 	}
 }

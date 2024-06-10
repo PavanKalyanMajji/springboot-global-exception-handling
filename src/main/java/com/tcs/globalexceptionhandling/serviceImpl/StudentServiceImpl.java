@@ -1,5 +1,7 @@
 package com.tcs.globalexceptionhandling.serviceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,11 @@ public class StudentServiceImpl implements StudentService {
 	@Override
 	public Student getStudentById(String studentId) {
 		return repo.getStudentById(studentId);
+	}
+
+	@Override
+	public List<Student> getAllStudents() {
+		return repo.getAllStudents();
 	}
 
 }
